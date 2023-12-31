@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: web1
+  name: web1
+  namespace: hosting
+spec:
+  ports:
+  - nodePort: 31329
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: web1
+  sessionAffinity: None
+  type: NodePort
