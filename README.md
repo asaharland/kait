@@ -25,6 +25,22 @@ pip install kait
 ]
 ```
 
+### Using a Local LLM
+
+You can use OpenAI compatible local LLMs by including a `base_url` in your model spec:
+
+```
+[
+    {
+        "model": "chatglm2-6b",
+        "base_url": "http://localhost:8000/v1",
+        "api_key": "NULL", # Any string will do
+    }
+]
+```
+
+[FastChat/](https://github.com/lm-sys/FastChat) and [llama-cpp-python](https://llama-cpp-python.readthedocs.io/en/latest/) both provide OpenAI compatible APIs which can be used with the above config. Which models provide adequate performance still needs validating.
+
 ## Usage
 
 `kait` requires kubectl to be installed and authenticated against the cluster you want to use.
